@@ -1,5 +1,5 @@
 <?php
-    include_once '../config/database.php';
+    include_once 'config/database.php';
 
     try{
         $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -12,21 +12,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="config/style/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+        <link rel="stylesheet" type="text/css" href="style/style.css">
         <title>camagru</title>
     </head>
     <body>
     <div class="back-image"></div>
          <div class="styles">
-        <a href="config/register.php">Camagru</a>
+        <a href="login.php">Log in<br/></a>
+        <a href="register.php">Register</a>
+        <br/>
+        <br/>
+        <p>Camagru</p>
+        <p>do you want to go to the<br/><a href="gallery2.php">Gallery</a></p>
         </div>
-         <?php
-            if ($result){
-                foreach ($result as $row) {
-                    ?><img id="e1" src=<?= $row['img_name']; ?> width="98%" height="auto"><?php
-                }
-            }
-        ?> 
             <div class="footer">
                 <footer>@lmkwanaz</footer>
             </div>

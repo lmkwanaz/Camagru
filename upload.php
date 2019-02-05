@@ -1,12 +1,45 @@
 
 <!DOCTYPE HTML>
 <html>
-    <body>
         <head>
-            <link rel="stylesheet" type="text/css" href="config/style/upload.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" type="text/css" href="style/upload.css">
             <title>camagru</title>
         </head>
-        
+        <style>
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+        </style>
+        <body>
+        <body background="source/download.jpeg">
+    <ul>
+  <li><a href="gallery.php">Gallery</a></li>
+  <li><a href="login.php">Reset password</a></li>
+  <li><a href="index.php">Index</a></li>
+  <li><a href="webcam.php">Camera</a></li>
+</ul>  
         <div class="neo"><input type='file' accept='image/*' onchange='openFile(event)'><br>
             <script>
               var openFile = function(event) {
@@ -33,18 +66,8 @@
         </div>
         <div class="img">
         <p>upload image</p>
-        <img id="scream" width="220" height="277" src="./config/source/b.jpg">
-    <!-- <p>canvas:</p>
-    <canvas id="mycanvas" width="240" height="350" > -->
-    </canvas>
-    <!-- <script>
-        window.onload = function(){
-            var canvas = document.getElementById("mycanvas");
-            var ctx = canvas.getContext("2d");
-            var img = document.getElementById("scream");
-            ctx.drawImage(img, 2 , 2, 235, 345);
-        };
-    </script> -->
+        <img id="scream" width="150" height="200" src="source/b.jpg">
+    
     </div>
     <div class="upload">
         <form action="uploader.php" method="post">

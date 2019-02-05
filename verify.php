@@ -1,9 +1,12 @@
 <?php
 
 include_once 'config/core/init.php';
+include_once 'config/database.php';
 
 try{
     $db = new PDO("mysql:host=$host;bdname=$dbname", $username, $password);
+    echo "dbname :".$dbname;
+    echo "username :".$username;
     $query = "SELECT * FROM users WHERE username = :username OR email = :email";
     $stmt = $db->prepare($query);
 
@@ -19,7 +22,7 @@ try{
     }else{
         echo "User doesn't exist";
     }
-    header("Location:config/login.php");
+    header("Location: login.php");
 }catch(PDOException $e){
     echo "Error".$e;
 

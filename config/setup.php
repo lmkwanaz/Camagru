@@ -35,6 +35,7 @@ try{
     username varchar(20) NULL,
     email varchar(30)  NULL,
     password varchar(64) NULL,
+    confirmpassword varchar(64) NULL,
     salt varchar(32) NULL,
     name varchar(50)  NULL,
     user_isvalidated boolean not null DEFAULT '0',

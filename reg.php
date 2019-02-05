@@ -1,5 +1,5 @@
 <?php
-include_once 'database.php';
+include_once './config/database.php';
 
 /* if (isset($_GET['submit']))
 {
@@ -25,7 +25,8 @@ try{
     $stmt->bindparam(':email', $_POST['email']);
     $stmt->execute();
     $result = $stmt->fetchall();
-    // die("hard");
+     //die("hard");
+    //if(isset($_POST['submit']))
     if(count($result) == 0){
         if ($_POST['password'] === $_POST['Repassword']){
             try{
@@ -42,27 +43,31 @@ try{
 
                 echo 'you are now registered!';
 
+                echo "email : ".$_POST['email'];
+                echo "name :".$_POST['username'];
+
+                $email = $_POST['email'];
+                $name = $_POST['username'];
+                
                 $massage = 
                 "
-                Hi ". $_POST['name'] ."
+                Hi ". $name ."
                 Confirm your Email
 
                 click on the link below to veify your account
-                http://localhost:8080/camagruz/verify.php?email=".$_POST['email'];
-               
-                mail($_POST['email'], "camagru email confirmation", $massage,"camagru");
-                echo '<script>alert("Please verify your email address");</script>';
+                http://localhost:8080/camagru/verify.php?email=".$email;
+                
+                mail($email, "camagru email confirmation", $massage, "camagru");
                 
             }
             catch(PDOexception $e){
                 echo $e->getmessage();
-            } 
-          }     
+            }             
+        } 
     }
-    header("Location: ./register.php");
+    Header("location: register.php?success='true'");
 }
 catch(PDOexception $e){
     echo $e->getmessage();
 }
-
 ?>

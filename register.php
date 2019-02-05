@@ -1,21 +1,15 @@
 <?php
-/* include_once 'database.php';
 
-if (isset($_GET['submit']))
+if (isset($_GET['success']))
 {
-    try{
-        $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-        $query = "INSERT INTO users (username, email, password) VALUES ( '" . $_GET['username'] . "','" .$_GET['email'] . "','" .$_GET['password']."');";
-    $db->exec($query);
-    }
-    catch(PDOexception $e){
-        echo $e->getmassage();
-    }
-} */
-?>
+    // echo "<script>window.alert(you are now registered); console.log('registered'); </script>";
+    echo '<script type="text/javascript">alert("you are now registered please verify your email");</script>';
+} 
+?>x
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="style/stylie.css">
 		<title>camagru</title>
     </head>
@@ -36,15 +30,15 @@ if (isset($_GET['submit']))
             <input type="email" placeholder="Enter Email" name="email" required/>
             <label for="password">password</label>
             <input type="password" placeholder="Enter Password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="must contain at least one number and one uppercase and lowercase, and at least 8 or more characters" required/>
-        
             <label for="Repassword">Repeat password</label>
             <input type="password" placeholder="Repeat Password" data-equalto="password" name="Repassword" id="Repeat password" required/>
             <hr>
             <button type="submit" class="registerbtn">Register</button>
+            <!-- <a href="register.php">Register</a> -->
             <!--</div>-->
             <div class="container signin">
             <p>already have an account? <a href="login.php">Sign in</a>.</p>
-            <p>do you want to <a href="../index.php">Sign out</a>?</p> 
+            <p>do you want to <a href="index.php">Sign out</a>?</p> 
 
         </div>
 </div>
